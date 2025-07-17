@@ -154,3 +154,4 @@ LaTeX provides a wide range of mathematical symbols:
 - Operators: `$\sum$`, `$\prod$`, `$\int$`, `$\partial$`, `$\nabla$`
 - Relations: `$\leq$`, `$\geq$`, `$\approx$`, `$\sim$`, `$\propto$`
 - Logical symbols: `$\forall$`, `$\exists$`, `$\neg$`, `$\wedge$`, `$\vee$`
+$\alpha$，$\beta$
