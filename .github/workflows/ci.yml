@@ -40,9 +40,6 @@ jobs:
       - name: "📦 Install dependencies"
         run: pnpm install
 
-      - name: "📦 Install remark and rehype"
-        run: pnpm install rehype-katex remark-math katex
-
       - name: "🔎 Lint code"
         run: pnpm run lint
 
