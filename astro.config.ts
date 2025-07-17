@@ -15,7 +15,7 @@ import rehypeKatex from "rehype-katex";
 
 // https://astro.build/config
 export default defineConfig({
-  site: SITE.website,
+  site: https://blog.ymdr.top,
   integrations: [
     sitemap({
       filter: page => SITE.showArchives || !page.endsWith("/archives"),
