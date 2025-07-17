@@ -157,4 +157,6 @@ LaTeX provides a wide range of mathematical symbols:
 
 If you see the following characters turn into Greek letters, then you've succeed.
 $\alpha$，$\beta$
+
+The independent formula is as follows:
 $$ \int_{-\infty}^{\infty} e^{-x^2} dx = \sqrt{\pi} $$
