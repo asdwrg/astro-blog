@@ -154,4 +154,7 @@ LaTeX provides a wide range of mathematical symbols:
 - Operators: `$\sum$`, `$\prod$`, `$\int$`, `$\partial$`, `$\nabla$`
 - Relations: `$\leq$`, `$\geq$`, `$\approx$`, `$\sim$`, `$\propto$`
 - Logical symbols: `$\forall$`, `$\exists$`, `$\neg$`, `$\wedge$`, `$\vee$`
+
+If you see the following characters turn into Greek letters, then you've succeed.
 $\alpha$，$\beta$
+$$ \int_{-\infty}^{\infty} e^{-x^2} dx = \sqrt{\pi} $$

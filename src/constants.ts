@@ -7,6 +7,8 @@ import IconWhatsapp from "@/assets/icons/IconWhatsapp.svg";
 import IconFacebook from "@/assets/icons/IconFacebook.svg";
 import IconTelegram from "@/assets/icons/IconTelegram.svg";
 import IconPinterest from "@/assets/icons/IconPinterest.svg";
+import IconWeiXin from "@/assets/icons/IconWeiXin.svg";
+import IconQQ from "@/assets/icons/IconQQ.svg";
 import { SITE } from "@/config";
 
 interface Social {
@@ -19,25 +21,19 @@ interface Social {
 export const SOCIALS: Social[] = [
   {
     name: "GitHub",
-    href: "https://github.com/satnaing/astro-paper",
+    href: "https://github.com/asdwrg",
     linkTitle: `${SITE.title} on GitHub`,
     icon: IconGitHub,
   },
   {
-    name: "X",
-    href: "https://x.com/username",
-    linkTitle: `${SITE.title} on X`,
-    icon: IconBrandX,
-  },
-  {
-    name: "LinkedIn",
-    href: "https://www.linkedin.com/in/username/",
-    linkTitle: `${SITE.title} on LinkedIn`,
-    icon: IconLinkedin,
+    name: "Telegram",
+    href: "https://t.me/ymdr_C/",
+    linkTitle: `${SITE.title} on Telegram`,
+    icon: IconTelegram,
   },
   {
     name: "Mail",
-    href: "mailto:yourmail@gmail.com",
+    href: "jun860262@gmail.com",
     linkTitle: `Send an email to ${SITE.title}`,
     icon: IconMail,
   },
@@ -45,10 +41,10 @@ export const SOCIALS: Social[] = [
 
 export const SHARE_LINKS: Social[] = [
   {
-    name: "WhatsApp",
-    href: "https://wa.me/?text=",
-    linkTitle: `Share this post via WhatsApp`,
-    icon: IconWhatsapp,
+    name: "WeiXin",
+    href: "https://weixin.qq.com/?text=",
+    linkTitle: `Share this post via WeiXin`,
+    icon: IconWeiXin,
   },
   {
     name: "Facebook",

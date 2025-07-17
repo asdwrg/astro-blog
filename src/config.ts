@@ -1,13 +1,13 @@
 export const SITE = {
   website: "https://blog.ymdr.top/", // replace this with your deployed domain
   author: "Ymdr",
-  profile: "https://satnaing.dev/",
+  profile: "https://ymdr.top/",
   desc: "A minimal blog .",
-  title: "YMDR BLOG",
-  ogImage: "astropaper-og.jpg",
+  title: "YMDR",
+  ogImage: "NoWork.jpg",
   lightAndDarkMode: true,
-  postPerIndex: 4,
-  postPerPage: 4,
+  postPerIndex: 3,
+  postPerPage: 5,
   scheduledPostMargin: 15 * 60 * 1000, // 15 minutes
   showArchives: true,
   showBackButton: true, // show back button in post detail
