@@ -44,15 +44,6 @@ importers:
       tailwindcss:
         specifier: ^4.1.11
         version: 4.1.11
-      rehype-katex:
-        specifier: ^7.0.1
-        version: 7.0.1
-      remark-math:
-        specifier: ^6.0.0
-        version: 6.0.0
-      katex: 
-        specifier: ^0.15.2
-        version: 0.15.2
     devDependencies:
       '@astrojs/check':
         specifier: ^0.9.4
