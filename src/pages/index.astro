@@ -43,12 +43,19 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
       </a>
 
       <p>
-        本博客使用<LinkButton
+        本博客基于 
+        <LinkButton
           class="underline decoration-dashed underline-offset-4 hover:text-accent"
           href="https://astro.build/"
         >
           Astro
-        </LinkButton> 搭建。
+        </LinkButton> 构建，在
+        <LinkButton
+          class="underline decoration-dashed underline-offset-4 hover:text-accent"
+          href="https://vercel.com/"
+        >
+          Vercel
+        </LinkButton> 上部署。
         用来记录点东西，随便写点什么喵~o( =∩ω∩= )m
       </p>
       <p class="mt-2">
