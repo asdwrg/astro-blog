@@ -10,6 +10,8 @@ import IconPinterest from "@/assets/icons/IconPinterest.svg";
 import IconWeiXin from "@/assets/icons/IconWeiXin.svg";
 import IconQQ from "@/assets/icons/IconQQ.svg";
 import { SITE } from "@/config";
+import type { GiscusProps } from "@giscus/react";
+
 
 interface Social {
   name: string;
