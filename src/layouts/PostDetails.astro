@@ -124,8 +124,6 @@ const nextPost =
 
     <ShareLinks />
 
-    <Comments client:only="react" />
-
     <hr class="my-6 border-dashed" />
 
     <!-- Previous/Next Post Buttons -->
@@ -159,6 +157,8 @@ const nextPost =
         )
       }
     </div>
+
+    <Comments client:only="react" />
     
   </main>
   <Footer />
