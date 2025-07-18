@@ -1,37 +1,23 @@
 ---
 layout: ../layouts/AboutLayout.astro
-title: "About"
+title: "关于"
 ---
 
-AstroPaper is a minimal, accessible and SEO-friendly blog theme built with [Astro](https://astro.build/) and [Tailwind CSS](https://tailwindcss.com/).
+# 隐私政策
 
-![Astro Paper](public/astropaper-og.jpg)
+## 评论
+由于本博客使用Giscus来实现评论功能，因此当您在本博客留下评论时，相关信息会被提交至GitHub。
 
-AstroPaper provides a solid foundation for blogs, or even portfolios\_ with full markdown support, built-in dark mode, and a clean layout that works out-of-the-box.
+## Cookies
+如果您在本博客留下评论，您可以选择用 Cookies 保存GitHub登录的相关信息。这是为了让您可以不用在下次评论时再次登录。
 
-The blog posts in this theme also serve as guides, docs or example articles\_ making AstroPaper a flexible starting point for your next content-driven site.
+## 来自其他网站的嵌入内容
+本站上的文章可能会包含嵌入的内容（如视频、图片、文章等）。来自其他站点的嵌入内
+容的行为和您直接访问这些其他站点没有区别。
+这些站点可能会收集关于您的数据、使用 Cookies、嵌入额外的第三方跟踪程序及监视您与这些嵌入内容的交互，包括在您有这些站点的账户并登录了这些站点时，跟踪您与嵌入内容的交互。
 
-## Features
+## 我们保留多久您的信息
+一但您留下评论，评论和其元数据将被无限期保存。
 
-AstroPaper comes with a set of useful features that make content publishing easy and effective:
-
-- SEO-friendly
-- Fast performance
-- Light & dark mode
-- Highly customizable
-- Organizable blog posts
-- Responsive & accessible
-- Static search with [PageFind](https://pagefind.app/)
-- Automatic social image generation
-
-and so much more.
-
-## Show your support
-
-If you like [AstroPaper](https://github.com/satnaing/astro-paper), consider giving it a star ⭐️.
-
-Found a bug 🐛 or have an improvement ✨ in mind? Feel free to open an [issue](https://github.com/satnaing/astro-paper/issues), submit a [pull request](https://github.com/satnaing/astro-paper/pulls) or start a [discussion](https://github.com/satnaing/astro-paper/discussions).
-
-If you find this theme helpful, you can also [sponsor me on GitHub](https://github.com/sponsors/satnaing) or [buy me a coffee](https://buymeacoffee.com/satnaing) to show your support — every penny counts.
-
-Kyay zuu! 🙏🏼
+## 您的数据将发送到何处
+来自您的数据会被提供给[GitHub](https://github.com/)，可能会被提供给[Vercel](https://vercel.com/)和[Cloudflare](https://www.cloudflare.com/)以向本站提供部署及CDN加速服务。
