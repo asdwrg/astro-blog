@@ -77,3 +77,16 @@ export const SHARE_LINKS: Social[] = [
     icon: IconMail,
   },
 ] as const;
+
+export const GISCUS: GiscusProps = {
+  repo: "asdwrg/astro-blog",
+  repoId: "R_kgDOPNrI_A",
+  category: "Announcements",
+  categoryId: "DIC_kwDOPNrI_M4CtF5S",
+  mapping: "pathname",
+  reactionsEnabled: "1",
+  emitMetadata: "0",
+  inputPosition: "bottom",
+  lang: "zh-CN",
+  loading: "lazy",
+};
