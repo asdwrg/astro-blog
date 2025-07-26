@@ -4,7 +4,7 @@ pubDatetime: 2025-07-26T19:42:00Z
 modDatetime: 2025-07-26T19:42:00Z
 title: 常识必知
 slug: general-knowledge
-featured: false
+featured: true
 draft: false
 tags:
   - docs
