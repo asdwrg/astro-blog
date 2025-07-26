@@ -2,14 +2,14 @@
 author: ymdr
 pubDatetime: 2025-07-26T19:42:00Z
 modDatetime: 2025-07-26T19:42:00Z
-title: 常识必知
+title: ceshi
 slug: general-knowledge
 featured: false
 draft: false
 tags:
   - docs
 description:
-  基本常识
+  ceshi
 ---
 ## 目录
 
