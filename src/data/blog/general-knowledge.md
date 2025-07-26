@@ -1,7 +1,7 @@
 ---
-author: ymdr
-pubDatetime: 2025-07-26T19:42:00Z
 title: 常识必知
+author: ymdr
+pubDatetime: 2025-07-26
 slug: general-knowledge
 featured: false
 draft: false
