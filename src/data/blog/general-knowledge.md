@@ -11,7 +11,7 @@ tags:
 description:
   基本常识
 ---
-## 目录
+## Table of contents
 
 ## 一、政治常识
 
