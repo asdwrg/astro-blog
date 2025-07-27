@@ -24,7 +24,7 @@ export default defineConfig({
     remarkPlugins: [
       remarkMath,
       remarkToc, 
-      [remarkCollapse, { test: "目录" }]
+      [remarkCollapse, { test: "Table of contents" }]
     ],
     rehypePlugins: [rehypeKatex],
     shikiConfig: {
