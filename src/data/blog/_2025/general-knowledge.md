@@ -2,7 +2,7 @@
 title: 常识必知
 author: ymdr
 pubDatetime: 2025-07-26
-modDatetime：2025-07-28
+modDatetime：2025-07-29
 slug: general-knowledge
 featured: false
 draft: false
@@ -279,5 +279,7 @@ description:
 11. 唐玄宗在位前期，国家空前繁荣富强，史称“`开元盛世`”。
 12. 王安石变法是北宋`神宗`时期的政治改革。
 13. 郑和下西洋最远到达`非洲`东海岸和红海沿岸。
+14. 张居正改革的主要内容包括考成法和`一条鞭法`等。
+15. 隋唐时期中央确立`三省六部制`。
 
 ## 四、科技常识
