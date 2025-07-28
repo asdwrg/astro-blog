@@ -2,7 +2,7 @@
 title: 常识必知
 author: ymdr
 pubDatetime: 2025-07-26
-modDatetime：2025-07-29
+modDatetime: 2025-07-28
 slug: general-knowledge
 featured: false
 draft: false
