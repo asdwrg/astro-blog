@@ -24,7 +24,6 @@
     figcaption,
     table,
     code {
-      font-size: 1rem;
       @apply text-foreground;
     }
 
