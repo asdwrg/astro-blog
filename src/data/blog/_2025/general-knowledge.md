@@ -620,34 +620,3 @@ description:
 9. 商业银行在中华人民共和国境内不得从事`信托投资和证券经营业务`，不得向`非自用不动产投资或者向非银行金融机构和企业`投资，但国家另有规定的除外。
 10. 医疗责任保险业务属于`财产保险业务`，不属于人身保险（人寿保险公司业务范围）。
 11. 小额贷款公司是由自然人、企业法人与其他社会组织投资设立，不吸收`公众存款`，经营小额贷款业务，以有限责任公司或股份有限公司形式开展经营活动的金融机构。
-
-```js file="astro.config.ts"
-// ...
-// [!code --:5]
-import {
-  transformerNotationDiff,
-  transformerNotationHighlight,
-  transformerNotationWordHighlight,
-} from "@shikijs/transformers";
-
-export default defineConfig({
-  // ...
-  markdown: {
-    remarkPlugins: [remarkToc, [remarkCollapse, { test: "Table of contents" }]],
-    shikiConfig: {
-      // For more themes, visit https://shiki.style/themes
-      themes: { light: "min-light", dark: "night-owl" },
-      defaultColor: false,
-      wrap: false,
-      transformers: [
-        transformerFileName(),
-      // [!code --:3]
-        transformerNotationHighlight(),
-        transformerNotationWordHighlight(),
-        transformerNotationDiff({ matchAlgorithm: "v3" }),
-      ],
-    },
-  },
-  // ...
-}
-```
