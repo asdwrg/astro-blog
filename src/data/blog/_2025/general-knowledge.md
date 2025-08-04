@@ -8,6 +8,7 @@ featured: false
 draft: false
 tags:
   - docs
+  - 政治
 description:
   基本常识
 ---
