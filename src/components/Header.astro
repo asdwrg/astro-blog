@@ -166,13 +166,3 @@ const isActive = (path: string) => {
   // Runs on view transitions navigation
   document.addEventListener("astro:after-swap", toggleNav);
 </script>
-
-<script is:inline src="https://www.googletagmanager.com/gtag/js?id=G-7M92BGNCST" type="text/partytown"></script>
-<script is:inline type="text/partytown">
-  window.dataLayer = window.dataLayer || [];
-  window.gtag = function () {
-        dataLayer.push(arguments);
-    };
-  window.gtag('js', new Date());
-  window.gtag('config', 'G-7M92BGNCST');
-</script>

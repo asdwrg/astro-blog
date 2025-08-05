@@ -104,6 +104,18 @@ const structuredData = {
       is:inline
       set:html={JSON.stringify(structuredData)}
     />
+    <script
+      is:inline
+      src="https://www.googletagmanager.com/gtag/js?id=G-7M92BGNCST"
+      type="text/partytown"></script>
+    <script is:inline type="text/partytown">
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function () {
+        dataLayer.push(arguments);
+      };
+      window.gtag("js", new Date());
+      window.gtag("config", "G-7M92BGNCST");
+    </script>
 
     <!-- Enable RSS feed auto-discovery  -->
     <!-- https://docs.astro.build/en/recipes/rss/#enabling-rss-feed-auto-discovery -->
