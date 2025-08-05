@@ -14,7 +14,6 @@ export interface Props {
   pubDatetime?: Date;
   modDatetime?: Date | null;
   scrollSmooth?: boolean;
-  id: string;
 }
 
 const {
@@ -27,7 +26,6 @@ const {
   pubDatetime,
   modDatetime,
   scrollSmooth = false,
-  id,
 } = Astro.props;
 
 const socialImageURL = new URL(ogImage, Astro.url);
@@ -61,7 +59,6 @@ const structuredData = {
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="canonical" href={canonicalURL} />
     <meta name="generator" content={Astro.generator} />
-    <GoogleAnalytics id="G-7M92BGNCST" />
 
     <!-- General Meta Tags -->
     <title>{title}</title>
@@ -110,19 +107,16 @@ const structuredData = {
 
     <!-- Google tag (gtag.js) -->
     <script
-      is:inline
       async
-      type="text/partytown"
-      src=`https://www.googletagmanager.com/gtag/js?id=${id}`
-    ></script>
-    <script is:inline define:vars={{ id }} type="text/partytown">
+      src="https://www.googletagmanager.com/gtag/js?id=G-7M92BGNCST"></script>
+    <script is:inline>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
       }
       gtag("js", new Date());
 
-      gtag("config", id);
+      gtag("config", "G-7M92BGNCST");
     </script>
 
     <!-- Enable RSS feed auto-discovery  -->
