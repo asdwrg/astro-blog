@@ -20,7 +20,7 @@ export default defineConfig({
   site: 'https://blog.ymdr.top',
   integrations: [sitemap({
     filter: page => SITE.showArchives || !page.endsWith("/archives"),
-  }), react(), partytown({ config: { forward: ['dataLayer.push', 'gtag'] } })],
+  }), react(), partytown({ config: { forward: ['dataLayer.push'] } })],
   markdown: {
     remarkPlugins: [
       remarkMath,
