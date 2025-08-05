@@ -13,13 +13,14 @@ import { SITE } from "./src/config";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 import react from "@astrojs/react";
+import partytown from '@astrojs/partytown';
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://blog.ymdr.top',
   integrations: [sitemap({
     filter: page => SITE.showArchives || !page.endsWith("/archives"),
-  }), react()],
+  }), react(), partytown({ config: { forward: ['dataLayer.push', 'gtag'] } })],
   markdown: {
     remarkPlugins: [
       remarkMath,
