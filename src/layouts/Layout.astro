@@ -108,15 +108,16 @@ const structuredData = {
     <!-- Google tag (gtag.js) -->
     <script
       async
-      src="https://www.googletagmanager.com/gtag/js?id=G-7M92BGNCST"></script>
-    <script is:inline>
+      is:inline
+      src="https://www.googletagmanager.com/gtag/js?id=G-7M92BGNCST"
+      type="text/partytown"></script>
+    <script is:inline type="text/partytown">
       window.dataLayer = window.dataLayer || [];
-      function gtag() {
+      window.gtag = function () {
         dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-7M92BGNCST");
+      };
+      window.gtag("js", new Date());
+      window.gtag("config", "G-7M92BGNCST");
     </script>
 
     <!-- Enable RSS feed auto-discovery  -->
