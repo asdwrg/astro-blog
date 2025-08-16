@@ -56,7 +56,7 @@ systemctl enable hysteria-server.service
 
 ```bash
 cat << EOF > /etc/hysteria/config.yaml
-// [!code highlight:start]
+// [!code highlight]
 listen: :28349 #监听端口
 
 # 使用自签证书
@@ -67,13 +67,13 @@ tls:
 # 使用CA证书
 #acme:
 #  domains:
-#    - a.example.com
-#  email: test@sharklasers.com
- // [!code highlight:end]
+// [!code highlight:2]
+#    - a.example.com 
+#  email: test@sharklasers.com 
 
 auth:
   type: password
-  // [!code focus]
+  // [!code highlight]
   password: d78Sj9y
   
 masquerade:
@@ -138,8 +138,6 @@ sed -i '/User=/d' /etc/systemd/system/hysteria-server.service sed -i '/User=/d' 
     电脑v2rayN客户端配置
   </figcaption>
 </figure>
-
-![电脑v2rayN客户端配置](https://images.ymdr.top/file/blog/1755366187357_1729352376.png "电脑v2rayN客户端配置")
 
 NekoBox（目前已停更）、v2rayNG配置与电脑端类似，不过多赘述。sing-box需要修改配置文件并导入app使用，参考配置文件如下，可参考[sing-box官网](https://sing-box.sagernet.org/zh/configuration/)进行个性化修改。
 
