@@ -38,11 +38,15 @@ description:
 apt install git
 ```
 
-然后运行`git -v`验证是否安装成功，安装成功时会返回 Git 的版本信息。
+然后运行`git -v`验证是否安装成功，安装成功时会返回 Git 的版本信息。纯 IPv6 vps 连接不上 github 建议使用 warp 脚本（如下）或者设置 DNS64 解锁。
+
+```bash
+wget -N https://gitlab.com/fscarmen/warp/-/raw/main/warp-go.sh && bash warp-go.sh [option] [lisence]
+```
 
 接下来安装 Node.js，具体安装教程看[官网](https://nodejs.org/zh-cn/download)足以。
 
-安装完成后运行环境就配置完成了
+安装完成后运行环境就配置完成了。
 
 ## 二、部署并配置酒馆
 
