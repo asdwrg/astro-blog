@@ -22,6 +22,10 @@ description:
   - [2.配置部分](#2配置部分)
   - [3.测试部分](#3测试部分)
 - [三、反代和后台运行设置](#三反代和后台运行设置)
+  - [1.安装并运行 nginx](#1安装并运行-nginx)
+  - [3.申请 SSL 证书](#3申请-ssl-证书)
+  - [4.配置反代](#4配置反代)
+  - [5.设置后台运行和开机自启](#5设置后台运行和开机自启)
 
 
 ## 一、运行环境配置
@@ -88,7 +92,7 @@ Go to: http://127.0.0.1:8000/ to open SillyTavern
 nano config.yaml
 ```
 
-进行编辑, 编辑完成后使用 Ctrl + O 保存并使用 Ctrl + X 关闭nano。
+进行编辑, 编辑完成后使用 Ctrl + O 保存并使用 Ctrl + X 关闭 nano。
 
 配置文件主要注意以下条目：
 
@@ -148,9 +152,11 @@ bash start.sh
 
 经过以上步骤后已经可以正常使用，但IP加端口的访问方式不好记还有可能会导致数据泄露，所以可以进行反代配置。
 
-首先需要 DNS 平台的账号和自己的域名，在 DNS 平台上将域名解析到 vps 的 IP 地址。
+首先需要 DNS 平台的账号和自己的域名，在 DNS 平台上将域名解析到 vps 的 IP 地址。现在已经支持 IP 证书，或许可以不需要这一步，但在这里依旧按照以前来。
 
-然后再运行以下命令下载 nginx 以配置反代。
+### 1.安装并运行 nginx
+
+运行以下命令下载 nginx 以配置反代。
 
 ```bash
 apt install nginx
@@ -163,3 +169,148 @@ apt install nginx
 >ufw allow 'Nginx HTTPS'
 >```
 
+安装完成后先手动启动。
+
+```bash
+systemctl start nginx
+```
+
+然后查看 nginx 服务状态
+
+```bash
+systemctl status nginx
+```
+
+看到`active (running)`则表示成功运行 nginx
+
+### 3.申请 SSL 证书
+
+接下来开始申请 SSL 证书。
+
+这里可以使用 cloudflare 的免费证书，有效期长达 15 年，但只能对 cloudflare 和 vps 间的流量加密。
+
+首先安装 snap
+
+```bash
+apt install snapd
+```
+
+如果之前曾经安装过 certbot 相关的包，需要移除
+
+```bash
+apt-get remove certbot
+```
+
+安装 certbot
+
+```bash
+snap install --classic certbot
+```
+
+通过软链设置 certbot 的可执行命令
+
+```bash
+ln -s /snap/bin/certbot /usr/bin/certbot
+```
+
+运行 certbot 申请证书
+
+```bash
+sudo certbot certonly --nginx
+```
+
+记下证书文件的存放位置。
+
+### 4.配置反代
+
+进入 nginx 文件夹并编辑 nginx 配置文件
+
+```bash
+nano /etc/nginx/nginx.conf
+```
+
+示例配置如下：
+
+```bash
+server {
+listen 443 ssl;
+server_name 你的域名;
+
+ssl_certificate      填写证书路径，fullchain.pem;
+ssl_certificate_key 填写证书密钥路径，privkey.pem;
+
+    location / {
+        proxy_pass http://127.0.0.1:8000;   # 转发到本地服务，注意酒馆服务端口
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+        proxy_set_header Host $host;         # 保留原始域名
+        proxy_set_header X-Real-IP $remote_addr;  # 传递客户端真实IP
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        client_max_body_size 50M;   # 设置上传文件最大大小，这是必须加上的，大小可自定义
+    }
+}
+
+server {
+    listen 80;
+    server_name 你的域名;
+    return 301 https://$host$request_uri;
+}
+```
+
+### 5.设置后台运行和开机自启
+
+以 root 权限在 /etc/systemd/system/ 目录下创建一个名为 sillytavern.service 的文件
+
+```bash
+nano /etc/systemd/system/sillytavern.service
+```
+
+填写示例配置
+
+```bash
+[Unit]
+Description=SillyTavern backend service
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/root/SillyTavern
+ExecStart=/bin/bash -lc 'NODE_ENV=production node server.js'
+Restart=always
+RestartSec=10
+Environment=PATH=/root/.nvm/versions/node/v22.18.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
+[Install]
+WantedBy=multi-user.target
+```
+
+务必确认 WorkingDirectory 路径和 Environment 中的 Node.js 路径在你的机器上是完全一致的，根据酒馆的具体目录而定。
+
+编辑完成后使用 Ctrl + O 保存并使用 Ctrl + X 关闭 nano，重载 systemd 管理程序
+
+```bash
+systemctl daemon-reload
+```
+
+启动服务
+
+```bash
+systemctl start sillytavern
+```
+
+设置开机自启
+
+```bash
+systemctl enable sillytavern
+```
+
+查看运行日志，有助于排查错误
+
+```bash
+journalctl -u sillytavern -f
+```
+
+到这里就完全成功了，如果你之后升级了 Node.js（通过 NVM），记得更新 Environment 中的路径，否则服务可能会因为找不到 Node 程序的旧版本而启动失败。
