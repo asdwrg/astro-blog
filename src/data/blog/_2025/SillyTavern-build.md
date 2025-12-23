@@ -193,12 +193,6 @@ systemctl status nginx
 
 这里可以使用 cloudflare 的免费证书，有效期长达 15 年，但只能对 cloudflare 和 vps 间的流量加密。
 
-首先安装 snap
-
-```bash
-apt install snapd
-```
-
 如果之前曾经安装过 certbot 相关的包，需要移除
 
 ```bash
@@ -208,13 +202,7 @@ apt-get remove certbot
 安装 certbot
 
 ```bash
-snap install --classic certbot
-```
-
-通过软链设置 certbot 的可执行命令
-
-```bash
-ln -s /snap/bin/certbot /usr/bin/certbot
+sudo apt install certbot python3-certbot-nginx
 ```
 
 运行 certbot 申请证书
