@@ -290,19 +290,19 @@ systemctl daemon-reload
 启动服务
 
 ```bash
-systemctl start sillytavern
+systemctl start sillytavern.service
 ```
 
 设置开机自启
 
 ```bash
-systemctl enable sillytavern
+systemctl enable sillytavern.service
 ```
 
 查看运行日志，有助于排查错误
 
 ```bash
-journalctl -u sillytavern -f
+journalctl -u sillytavern.service -f
 ```
 
 到这里就完全成功了，如果你之后升级了 Node.js（通过 NVM），记得更新 Environment 中的路径，否则服务可能会因为找不到 Node 程序的旧版本而启动失败。
