@@ -2,7 +2,7 @@ export const SITE = {
   website: "https://blog.ymdr.top/", // replace this with your deployed domain
   author: "Ymdr",
   profile: "https://ymdr.top/",
-  desc: "A minimal blog .",
+  desc: "一个喜欢二次元，普普通通的牛马的博客。",
   title: "YMDR",
   ogImage: "NoWork.jpg",
   lightAndDarkMode: true,
@@ -12,7 +12,7 @@ export const SITE = {
   showArchives: true,
   showBackButton: true, // show back button in post detail
   editPost: {
-    enabled: true,
+    enabled: false,
     text: "Edit page",
     url: "https://github.com/asdwrg/astro-paper/edit/main/",
   },
