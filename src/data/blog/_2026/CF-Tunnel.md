@@ -2,7 +2,7 @@
 title: Cloudflare Tunnel客户端部署
 author: ymdr
 pubDatetime: 2026-01-25
-modDatetime: 2025-01-25
+modDatetime: 2026-01-25
 slug: CF-Tunnel
 featured: false
 draft: false
