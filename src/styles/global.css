@@ -30,7 +30,7 @@ html[data-theme="dark"] {
 }
 
 :root {
-  --font-sans: 'Noto Sans SC', 'IBM Plex Sans', system-ui, sans-serif;
+  --font-app: 'Noto Sans SC', 'IBM Plex Sans', system-ui, sans-serif;
 }
 
 @layer base {
