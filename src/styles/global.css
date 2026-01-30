@@ -21,16 +21,13 @@ html[data-theme="dark"] {
 }
 
 @theme inline {
-  --font-app: var(--font-google-sans-code);
+  --font-system: -apple-system, BlinkMacSystemFont, "Segoe UI (Custom)", Roboto, "Helvetica Neue", "Open Sans (Custom)", system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  --font-app: var(--font-google-sans-code), var(--font-system);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-accent: var(--accent);
   --color-muted: var(--muted);
   --color-border: var(--border);
-}
-
-:root {
-  --font-sans: 'Noto Sans SC', 'IBM Plex Sans', system-ui, sans-serif;
 }
 
 @layer base {
