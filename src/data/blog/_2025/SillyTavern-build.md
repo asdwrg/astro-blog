@@ -10,7 +10,7 @@ tags:
   - 教程
   - AI
 description:
-  在vps上部署酒馆，实现网页浏览的基础教程
+  在 vps 上部署酒馆，实现网页浏览的基础教程
 ---
 
 <!-- omit from toc -->
