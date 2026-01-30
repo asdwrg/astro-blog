@@ -78,21 +78,8 @@ export default defineConfig({
       {
         name: "System",
         cssVariable: "--font-system",
-        fontFamily: {
-          sans: [
-            "Noto Sans SC",
-            "-apple-system",
-            "BlinkMacSystemFont",
-            '"Segoe UI (Custom)"',
-            "Roboto",
-            '"Helvetica Neue"',
-            '"Open Sans (Custom)"',
-            "system-ui",
-            "sans-serif",
-            '"Apple Color Emoji"',
-            '"Segoe UI Emoji"',
-          ],
-        },
+        weights: [300, 400, 500, 600, 700],
+        styles: ["normal", "italic"],
       }
     ],
   },
