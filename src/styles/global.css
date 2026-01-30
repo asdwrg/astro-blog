@@ -21,7 +21,7 @@ html[data-theme="dark"] {
 }
 
 @theme inline {
-  --font-app: var(--font-noto-sans-sc);
+  --font-app: var(--font-system), var(--font-noto-sans-sc);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-accent: var(--accent);
