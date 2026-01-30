@@ -30,7 +30,7 @@ html[data-theme="dark"] {
 }
 
 :root {
-  --font-app: -apple-system, BlinkMacSystemFont, "Segoe UI (Custom)", Roboto, "Helvetica Neue", "Open Sans (Custom)", system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  --font-app: 'Noto Sans SC', 'Google Sans Code', system-ui, sans-serif;
 }
 
 @layer base {
