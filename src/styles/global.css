@@ -29,10 +29,6 @@ html[data-theme="dark"] {
   --color-border: var(--border);
 }
 
-:root {
-  --font-app: 'Noto Sans SC', 'Google Sans Code', system-ui, sans-serif;
-}
-
 @layer base {
   * {
     @apply border-border outline-accent/75;
