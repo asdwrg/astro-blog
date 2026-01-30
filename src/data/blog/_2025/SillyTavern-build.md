@@ -27,7 +27,6 @@ description:
   - [4.配置反代](#4配置反代)
   - [5.设置后台运行和开机自启](#5设置后台运行和开机自启)
 
-
 ## 一、运行环境配置
 
 有关于连接 vps 和配置登录文件等等这里不做讲解，不会请自行搜索相关教程。事先说明，各版本的相关命令可能有差别，这里以 Debian 系统为例。此教程参考了类脑知识库的文章，完善了部分内容。
@@ -223,7 +222,7 @@ nano /etc/nginx/nginx.conf
 
 示例配置如下：
 
-```bash
+```bash file=/etc/nginx/nginx.conf
 server {
 listen 443 ssl;
 server_name 你的域名;
@@ -261,7 +260,7 @@ nano /etc/systemd/system/sillytavern.service
 
 填写示例配置
 
-```bash
+```bash file=/etc/systemd/system/sillytavern.service
 [Unit]
 Description=SillyTavern backend service
 After=network.target

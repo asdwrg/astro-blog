@@ -151,11 +151,13 @@ sudo chmod 400 /etc/cloudflared/<Tunnel-ID>.json
 
 ```shell
 sudo tee /etc/cloudflared/config.yml >/dev/null <<'EOF'
+// [!code highlight:2]
 tunnel: Tunnel-name
 credentials-file: /etc/cloudflared/<Tunnel-ID>.json
 
 ingress:
   # HTTP 服务转发
+// [!code highlight:2]
   - hostname: domain
     service: http://localhost:8080
   
