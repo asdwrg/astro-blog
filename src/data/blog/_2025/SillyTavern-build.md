@@ -2,7 +2,7 @@
 title: 酒馆云端部署
 author: ymdr
 pubDatetime: 2025-12-19
-modDatetime: 2025-12-19
+modDatetime: 2026-02-09
 slug: SillyTavern-build
 featured: false
 draft: false
@@ -40,7 +40,7 @@ apt install git
 然后运行`git -v`验证是否安装成功，安装成功时会返回 Git 的版本信息。纯 IPv6 vps 连接不上 github 建议使用 warp 脚本（如下）或者设置 DNS64 解锁。
 
 ```bash
-wget -N https://gitlab.com/fscarmen/warp/-/raw/main/warp-go.sh && bash warp-go.sh [option] [lisence]
+wget -N https://gitlab.com/fscarmen/warp/-/raw/main/menu.sh && bash menu.sh [option] [lisence/url/token]
 ```
 
 接下来安装 Node.js，具体安装教程看[官网](https://nodejs.org/zh-cn/download)足以。
