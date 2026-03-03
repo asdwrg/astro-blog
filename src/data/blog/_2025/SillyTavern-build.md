@@ -2,7 +2,7 @@
 title: 酒馆云端部署
 author: ymdr
 pubDatetime: 2025-12-19
-modDatetime: 2025-12-19
+modDatetime: 2026-02-09
 slug: SillyTavern-build
 featured: false
 draft: false
@@ -26,6 +26,7 @@ description:
   - [3.申请 SSL 证书](#3申请-ssl-证书)
   - [4.配置反代](#4配置反代)
   - [5.设置后台运行和开机自启](#5设置后台运行和开机自启)
+- [四、酒馆更新](#四酒馆更新)
 
 ## 一、运行环境配置
 
@@ -40,7 +41,7 @@ apt install git
 然后运行`git -v`验证是否安装成功，安装成功时会返回 Git 的版本信息。纯 IPv6 vps 连接不上 github 建议使用 warp 脚本（如下）或者设置 DNS64 解锁。
 
 ```bash
-wget -N https://gitlab.com/fscarmen/warp/-/raw/main/warp-go.sh && bash warp-go.sh [option] [lisence]
+wget -N https://gitlab.com/fscarmen/warp/-/raw/main/menu.sh && bash menu.sh [option] [lisence/url/token]
 ```
 
 接下来安装 Node.js，具体安装教程看[官网](https://nodejs.org/zh-cn/download)足以。
@@ -305,3 +306,39 @@ journalctl -u sillytavern.service -f
 ```
 
 到这里就完全成功了，如果你之后升级了 Node.js（通过 NVM），记得更新 Environment 中的路径，否则服务可能会因为找不到 Node 程序的旧版本而启动失败。
+
+## 四、酒馆更新
+
+酒馆的更新也非常简单。
+
+首先，停止运行酒馆
+
+```bash
+systemctl stop sillytavern.service
+```
+
+然后进入酒馆所在目录
+
+```bash
+cd ./SillyTavern
+```
+
+使用 Git 拉取
+
+```bash
+git pull
+```
+
+更新依赖
+
+```bash
+npm install
+```
+
+重新运行酒馆
+
+```bash
+systemctl start sillytavern.service
+```
+
+如果对酒馆进行了一些本地修改，请使用 Git 命令进行合并处理。
