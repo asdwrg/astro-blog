@@ -26,6 +26,7 @@ description:
   - [3.申请 SSL 证书](#3申请-ssl-证书)
   - [4.配置反代](#4配置反代)
   - [5.设置后台运行和开机自启](#5设置后台运行和开机自启)
+- [四、酒馆更新](#四酒馆更新)
 
 ## 一、运行环境配置
 
@@ -305,3 +306,39 @@ journalctl -u sillytavern.service -f
 ```
 
 到这里就完全成功了，如果你之后升级了 Node.js（通过 NVM），记得更新 Environment 中的路径，否则服务可能会因为找不到 Node 程序的旧版本而启动失败。
+
+## 四、酒馆更新
+
+酒馆的更新也非常简单。
+
+首先，停止运行酒馆
+
+```bash
+systemctl stop sillytavern.service
+```
+
+然后进入酒馆所在目录
+
+```bash
+cd ./SillyTavern
+```
+
+使用 Git 拉取
+
+```bash
+git pull
+```
+
+更新依赖
+
+```bash
+npm install
+```
+
+重新运行酒馆
+
+```bash
+systemctl start sillytavern.service
+```
+
+如果对酒馆进行了一些本地修改，请使用 Git 命令进行合并处理。
