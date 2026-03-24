@@ -57,14 +57,26 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
         </LinkButton> 上部署。
         用来记录点东西，随便写点什么喵~o( =∩ω∩= )m
       </p>
-      <p class="mt-2">
-        点击
+      <p>
+        个人主页
         <LinkButton
           class="underline decoration-dashed underline-offset-4 hover:text-accent"
-          href="https://ymdr.top/ciallo/"
+          href="https://ymdr.top/"
         >
-          Ciallo～(∠・ω&lt; )⌒☆
-        </LinkButton> 有惊喜！
+          在这里
+        </LinkButton> ！想要提交友链请
+        <LinkButton
+          class="underline decoration-dashed underline-offset-4 hover:text-accent"
+          href="https://ymdr.top/friends"
+        >
+          在这里
+        </LinkButton> 提交喵！
+        <LinkButton
+          class="underline decoration-dashed underline-offset-4 hover:text-accent"
+          href="https://ymdr.top/ciallo"
+        >
+          柚子厨专享！
+        </LinkButton> 
       </p>
       {
         // only display if at least one social link is enabled
