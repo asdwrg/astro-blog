@@ -108,7 +108,6 @@ networks:
   internal_network: # 内部网络
     internal: true
   external_network: # 外部网
-
 ```
 
 接着创建 Docker 环境文件，主要是数据库的用户名、密码、端口。[官方示例](https://github.com/misskey-dev/misskey/blob/develop/.config/docker_example.env)
@@ -389,7 +388,6 @@ proxyBypassHosts:
 
 ```shell
 cd /docker/misskey
-
 docker compose up -d
 ```
 
@@ -548,6 +546,26 @@ server {
 解决办法是在 Misskey 的 Docker Compose 配置文件中加入：
 
 ```yaml file=/docker/misskey/misskey-compose.yaml
+# Misskey minimal deploy config
+services:
+  web:
+    restart: always
+    image: misskey/misskey:latest
+    container_name: misskey_web
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    ports:
+      - "3000:3000"
+    networks:
+      - internal_network
+      - external_network
+    volumes:
+      - ./config:/misskey/.config:ro
+      - ./files:/misskey/files
+    /* [!code ++:13] */
     user: root  # 1. 强制以 root 身份启动，获得权限
     command: >  # 2. 覆盖默认启动命令，执行我们的修复脚本
       bash -c "
@@ -561,6 +579,38 @@ server {
       # 5. 修复完成后，切换回低权限的 misskey 用户，再安全地启动程序
         su misskey -c 'pnpm run migrateandstart'
       "
+  redis:
+    restart: always
+    image: redis:7-alpine
+    container_name: misskey_redis
+    networks:
+      - internal_network
+    volumes:
+      - ./redis:/data
+    healthcheck:
+      test: "redis-cli ping"
+      interval: 5s
+      retries: 20
+
+  db:
+    restart: always
+    image: groonga/pgroonga:latest-alpine-18
+    container_name: misskey_db
+    networks:
+      - internal_network
+    env_file:
+      - ./config/docker.env
+    volumes:
+      - ./db:/var/lib/postgresql
+    healthcheck:
+      test: "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"
+      interval: 5s
+      retries: 20
+
+networks:
+  internal_network:
+    internal: true
+  external_network:
 ```
 
 然后运行 `docker compose down && docker compose up -d` 重新启动容器即可。
