@@ -12,6 +12,9 @@ description:
   详细介绍如何使用 Docker 搭建 Misskey 实例、过程中遇到的问题应该如何解决、如何清理维护数据库，确保实例正常运行。
 ---
 
+<!-- omit from toc -->
+## 目录
+
 - [一、Docker 环境安装](#一docker-环境安装)
 - [二、Docker Compose 部署 Misskey](#二docker-compose-部署-misskey)
 - [三、配置反向代理](#三配置反向代理)
