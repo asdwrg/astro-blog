@@ -640,7 +640,7 @@ docker image prune -f
 首先停止 Misskey 服务（以下命令默认在 docker 所在目录下执行）
 
 ```shell
-docker compose down
+docker stop misskey_web
 ```
 
 进入数据库容器
